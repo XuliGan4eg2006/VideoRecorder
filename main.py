@@ -8,8 +8,7 @@ frames_per_second = 24.0
 res = '720p'
 frameCounter = 0
 
-# Set resolution for the video capture
-# Function adapted from https://kirr.co/0l6qmh
+
 def change_res(cap, width, height):
     cap.set(3, width)
     cap.set(4, height)
@@ -23,7 +22,7 @@ STD_DIMENSIONS =  {
 }
 
 
-# grab resolution dimensions and set video capture to it.
+
 def get_dims(cap, res='1080p'):
     width, height = STD_DIMENSIONS["480p"]
     if res in STD_DIMENSIONS:
@@ -33,11 +32,9 @@ def get_dims(cap, res='1080p'):
     change_res(cap, width, height)
     return width, height
 
-# Video Encoding, might require additional installs
-# Types of Codes: http://www.fourcc.org/codecs.php
+
 VIDEO_TYPE = {
     'avi': cv2.VideoWriter_fourcc(*'XVID'),
-    #'mp4': cv2.VideoWriter_fourcc(*'H264'),
     'mp4': cv2.VideoWriter_fourcc(*'XVID'),
 }
 
